@@ -71,38 +71,14 @@ Implement the relationships between the `Doctor`, `Patient`, `Appointment`, and 
 #### **Tasks:**
 
 1. **Update Doctor Class for Relationships:**
-   - **One-to-Many Relationship with Appointments:**
-     - Annotate the `appointments` field with `@OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL)`.
    - **One-to-One Relationship with Office:**
      - Ensure the `office` field is correctly annotated with `@OneToOne(mappedBy = "doctor", cascade = CascadeType.ALL)`.
-   - **Many-to-Many Relationship with Patients:**
-     - Annotate the `patients` field with `@ManyToMany` and configure the `@JoinTable` accordingly.
    - **Custom Methods:**
      - Implement `equals` and `hashCode` methods based on the primary key (`doctorId`) to avoid recursion.
    - **Good to Know:**
      - **MappedBy:** Understand the use of `mappedBy` in Hibernate to indicate the owner of the relationship.
 
-2. **Update Patient Class for Relationships:**
-   - **One-to-Many Relationship with Appointments:**
-     - Annotate the `appointments` field with `@OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)`.
-   - **Many-to-Many Relationship with Doctors:**
-     - Annotate the `doctors` field with `@ManyToMany(mappedBy = "patients")`.
-   - **Custom Methods:**
-     - Implement `equals` and `hashCode` methods based on the primary key (`patientId`) to avoid recursion.
-   - **Good to Know:**
-     - **Avoiding Lazy Loading Issues:** Understand how to manage relationships without relying on `fetch = FetchType.LAZY`.
-
-3. **Update Appointment Class for Relationships:**
-   - **Many-to-One Relationship with Doctor:**
-     - Annotate the `doctor` field with `@ManyToOne` and `@JoinColumn(name = "DoctorID")`.
-   - **Many-to-One Relationship with Patient:**
-     - Annotate the `patient` field with `@ManyToOne` and `@JoinColumn(name = "PatientID")`.
-   - **Custom Methods:**
-     - Implement `equals` and `hashCode` methods based on the primary key (`appointmentId`) to avoid recursion.
-   - **Good to Know:**
-     - **Bidirectional Relationships:** Ensure that both sides of the relationship (e.g., `Doctor` ↔ `Appointment`) are correctly mapped and consistent.
-
-4. **Test the Relationships:**
+2. **Test the Relationships:**
    - **Write test cases** to verify that:
      - **One-to-Many:** A doctor can have multiple appointments, and deleting a doctor cascades to delete all associated appointments.
      - **Many-to-Many:** A patient can be associated with multiple doctors and vice versa, and changes are reflected in the junction table (`Doctor_Patient`).

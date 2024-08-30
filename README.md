@@ -29,7 +29,7 @@ Implement the `Office` class and `OfficeRepositoryImpl` to manage office-related
      - **One-to-One Relationship:** Understand how Hibernate manages one-to-one relationships, especially with regard to foreign key constraints and cascading operations.
 
 2. **Implement OfficeRepository:**
-   - **Path:** `com.healthcaremanagement.repository`
+   - **Path:** `com.healthcaremanagement.impl`
    - **Class Name:** `OfficeRepositoryImpl`
    - **Methods:**
      - **Create Method:** `void createOffice(Office office)`

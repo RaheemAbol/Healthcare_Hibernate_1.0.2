@@ -66,7 +66,7 @@ Implement the `Office` class and `OfficeRepositoryImpl` to manage office-related
 ### **Ticket 2: Implement Relationships Between Entities (One-to-Many, Many-to-One, Many-to-Many)**
 
 #### **Description:**
-Implement the relationships between the `Doctor`, `Patient`, `Appointment`, and `Office` entities using Hibernate. This includes setting up one-to-many, many-to-one, and many-to-many associations.
+Implement the relationship between the `Doctor` and `Office` entities using Hibernate. This includes setting up one-to-one associations.
 
 #### **Tasks:**
 
